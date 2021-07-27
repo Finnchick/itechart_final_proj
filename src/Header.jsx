@@ -10,7 +10,11 @@ function Header() {
   return (
     <div className="Header">
       <BurgerButton active={buttonActive} setActive={setButtonActive} />
-      <Menu active={buttonActive}></Menu>
+      <Menu active={buttonActive} setActive={setButtonActive}></Menu>
+      <h1 className="Logo"> Beer Catalagoue </h1>
+      <button>
+
+      </button>
     </div>
   );
 }
