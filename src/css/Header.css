@@ -1,0 +1,13 @@
+.Header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.5vh;
+  background-color: blue;
+}
+
+.Logo {
+  margin: 0;
+}
+
+/*# sourceMappingURL=Header.css.map */
