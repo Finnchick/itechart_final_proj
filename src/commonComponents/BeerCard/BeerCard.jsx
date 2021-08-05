@@ -1,6 +1,6 @@
 import React from 'react';
-import '../sass/BeerCard.sass';
-import BeerCardButton from './BeerCardButton';
+import './BeerCard.sass';
+import BeerCardButton from '../BeerCardButton/BeerCardButton';
 /* eslint-disable react/prop-types */
 function BeerCard({ cardHeader, information, imageUrl }) {
   return (

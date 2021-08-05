@@ -1,7 +1,7 @@
 import React from 'react';
-import Header from './Header';
-import AppWrapper from './AppWrapper';
-import Search from './commonComponents/Search';
+import Header from './commonComponents/Header/Header';
+import AppWrapper from './commonComponents/AppWrapper/AppWrapper';
+import Search from './commonComponents/Search/Search';
 import './sass/App.sass';
 //import BeerCard from "./commonComponents/BeerCard";
 

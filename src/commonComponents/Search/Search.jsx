@@ -1,6 +1,6 @@
 import React from 'react';
 import loading from './icons8-search.svg';
-import '../sass/Search.sass';
+import './Search.sass';
 function Search() {
   return (
     <div className="search-box">

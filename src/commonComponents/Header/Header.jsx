@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import './sass/Header.sass';
+import './Header.sass';
 //import BurgerButton from "./commonComponents/BurgerButton.jsx"
-import BurgerButton from './commonComponents/BurgerButton';
-import Menu from './Menu';
+import BurgerButton from '../BurgerButton/BurgerButton';
+import Menu from '../Menu/Menu';
 
 function Header() {
   const [buttonActive, setButtonActive] = useState(false);
