@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
-import '../sass/BurgerButton.sass';
+import './BurgerButton.sass';
 
 function BurgerButton({ active, setActive }) {
   return (

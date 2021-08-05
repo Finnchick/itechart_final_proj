@@ -1,5 +1,5 @@
 import React from 'react';
-import './sass/Menu.sass';
+import './Menu.sass';
 /* eslint-disable react/prop-types */
 function Menu({ active, setActive }) {
   return (

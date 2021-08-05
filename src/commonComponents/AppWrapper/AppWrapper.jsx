@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import BeerCard from './commonComponents/BeerCard';
-import './sass/AppWrapper.sass';
-import Loading from './Loading';
+import BeerCard from '../BeerCard/BeerCard';
+import './AppWrapper.sass';
+import Loading from '../Loading/Loading';
 /* eslint-disable react/prop-types */
 function AppWrapper() {
   // const fetchData = () => {
