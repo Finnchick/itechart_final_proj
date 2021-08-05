@@ -1,15 +1,22 @@
 import React from 'react';
-import OpenButton from './OpenButton';
-import FavouriteButton from './FavouriteButton';
-import "../css/BeerCard.css"
+import '../sass/BeerCard.sass';
+import BeerCardButton from './BeerCardButton';
 /* eslint-disable react/prop-types */
-function BeerCard({CardHeader, Information}) {
-    return ( <div className="BeerCard">
-        <h2>{CardHeader}</h2>
-        <p>{Information}</p>
-        <OpenButton/> <FavouriteButton/>
-        </div>
-    )
+function BeerCard({ cardHeader, information, imageUrl }) {
+  return (
+    <div className="BeerCard">
+      <img className="avatar" src={imageUrl} alt="Beer image"></img>
+      <h2>{cardHeader}</h2>
+      <p>{information}</p>
+      <div className="beercardButtons">
+        <BeerCardButton buttonText={'Open'} buttonClass={'beerCardButton'} />
+        <BeerCardButton
+          buttonText={'Favourite'}
+          buttonClass={'beerCardButton'}
+        />
+      </div>
+    </div>
+  );
 }
 
 export default BeerCard;
