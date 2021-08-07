@@ -13,6 +13,7 @@ function AppWrapper() {
   // };
   const [dataT, setData] = useState({});
   const [loading, setLoading] = useState(true);
+
   useEffect(async () => {
     const response = await fetch('https://api.punkapi.com/v2/beers');
     const data = await response.json();
