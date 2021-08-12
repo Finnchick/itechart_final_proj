@@ -1,11 +1,11 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
-import './BurgerButton.sass';
+import './style.sass';
 
 function BurgerButton({ active, setActive }) {
   return (
     <div
-      className={active ? 'BurgerButton change' : 'BurgerButton'}
+      className={active ? 'burgerButton change' : 'burgerButton'}
       onClick={() => setActive(!active)}
     >
       <div className="bar1"></div>

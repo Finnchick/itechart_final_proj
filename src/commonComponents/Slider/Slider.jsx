@@ -1,5 +1,5 @@
 import React from 'react';
-import './Slider.sass';
+import './style.sass';
 
 function Slider() {
   return (

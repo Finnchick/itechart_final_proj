@@ -1,6 +1,6 @@
 import React from 'react';
 import Slider from '../Slider/Slider';
-import './FilterResults.sass';
+import './style.sass';
 
 function FilterResults({ isActive }) {
   return (
