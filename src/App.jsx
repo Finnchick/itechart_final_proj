@@ -1,31 +1,31 @@
 import React from 'react';
 import Header from './commonComponents/Header/Header';
-import AppWrapper from './commonComponents/AppWrapper/AppWrapper';
-import Search from './commonComponents/Search/Search';
+//import AppWrapper from './pages/MainPage/AppWrapper';
+//import Search from './pages/MainPage/Search/Search';
 import './sass/App.sass';
-import {BrowserRouter, Route, Switch} from "react-router-dom";
-import BeerPage from "./commonComponents/BeerPage/BeerPage";
-import FavoritesPage from "./commonComponents/FavoritesPage/FavoritesPage";
+import { Route, Switch } from 'react-router-dom';
+import { HOME, FAVORITES, BEER_PAGE } from './constants/routes.js';
+
+import BeerPage from './pages/BeerPage/BeerPage';
+import FavoritesPage from './pages/FavoritesPage/FavoritesPage';
+import MainPage from './pages/MainPage/mainPage/MainPage';
 
 function App() {
   return (
-      <BrowserRouter>
-    <div className="app">
-        <Header />
-        <Switch>
-            <Route path="/beer">
-                <BeerPage beerName={"Mocha"}/>
-            </Route>
-            <Route path='/favorites'>
-                <FavoritesPage/>
-            </Route>
-            <Route path="/">
-                <Search />
-                <AppWrapper />
-            </Route>
-        </Switch>
+    <div className='app'>
+      <Header />
+      <Switch>
+        <Route path={BEER_PAGE}>
+          <BeerPage beerName={'Mocha'} />
+        </Route>
+        <Route path={FAVORITES}>
+          <FavoritesPage />
+        </Route>
+        <Route path={HOME}>
+          <MainPage />
+        </Route>
+      </Switch>
     </div>
-      </BrowserRouter>
   );
 }
 
