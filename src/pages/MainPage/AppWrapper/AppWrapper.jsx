@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import BeerCard from './BeerCard/BeerCard';
+import BeerCard from '../BeerCard/BeerCard';
 import './style.sass';
-import Loading from '../../commonComponents/Loading/Loading';
+import Loading from '../../../commonComponents/Loading/Loading';
 
 function AppWrapper() {
   const [dataT, setData] = useState(null);

@@ -1,14 +1,9 @@
 import React from 'react';
 
-import './style.sass'
+import './style.sass';
 
-/* eslint-disable react/prop-types */
 function FavoritesPage() {
-
-    return (
-        <div></div>
-    )
-        ;
+  return <div />;
 }
 
 export default FavoritesPage;

@@ -1,1 +1,1 @@
-export * from 'constants';
+export { HOME, FAVORITES, BEER_PAGE } from './routes';

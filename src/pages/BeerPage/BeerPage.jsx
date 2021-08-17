@@ -2,7 +2,6 @@ import React from 'react';
 import BeerCardButton from '../MainPage/BeerCardButton/BeerCardButton';
 import './style.sass';
 
-/* eslint-disable react/prop-types */
 function BeerPage({ beerName }) {
   return (
     <div className='beerPageWrapper'>

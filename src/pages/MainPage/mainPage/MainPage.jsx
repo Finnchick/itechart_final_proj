@@ -1,6 +1,6 @@
 import Search from '../Search/Search';
 import React from 'react';
-import AppWrapper from '../AppWrapper';
+import AppWrapper from '../AppWrapper/AppWrapper';
 
 function MainPage() {
   return (

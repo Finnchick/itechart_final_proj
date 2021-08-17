@@ -1,10 +1,8 @@
 import React from 'react';
 import Header from './commonComponents/Header/Header';
-//import AppWrapper from './pages/MainPage/AppWrapper';
-//import Search from './pages/MainPage/Search/Search';
 import './sass/App.sass';
 import { Route, Switch } from 'react-router-dom';
-import { HOME, FAVORITES, BEER_PAGE } from './constants/routes.js';
+import { HOME, FAVORITES, BEER_PAGE } from './constants';
 
 import BeerPage from './pages/BeerPage/BeerPage';
 import FavoritesPage from './pages/FavoritesPage/FavoritesPage';
