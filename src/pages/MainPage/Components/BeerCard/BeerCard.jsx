@@ -12,10 +12,10 @@ function BeerCard({ cardHeader, information, imageUrl, openButtonCallback }) {
       <div className='buttons-container'>
         <Button
           buttonText='Open'
-          className='beerCardButton'
+          className='beer-card-button'
           onClick={openButtonCallback}
         />
-        <Button buttonText='Favourite' className='beerCardButton' />
+        <Button buttonText='Favourite' className='beer-card-button' />
       </div>
     </div>
   );

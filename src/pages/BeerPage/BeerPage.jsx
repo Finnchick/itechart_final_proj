@@ -10,7 +10,7 @@ function BeerPage({ beerName }) {
         <div className='beer-minimum-info'>
           <h1>{beerName}</h1>
           <h4>Post Modern Classic. Spiky. Tropical. Hoppy.</h4>
-          <Button buttonText='Add to favorites' className='beerCardButton' />
+          <Button buttonText='Add to favorites' className='beer-card-button' />
           <p>
             Our flagship beer that kick started the craft beer revolution. This
             is James and Martins original take on an American IPA, subverted

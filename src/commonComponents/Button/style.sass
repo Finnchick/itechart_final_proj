@@ -1,7 +1,7 @@
 @import "src/sass/var"
 
 
-.beerCardButton, .beerCardButton::after
+.beer-card-button, .beer-card-button::after
   width: 140px
   height: 50px
   font-size: 16px
@@ -14,7 +14,7 @@
   position: relative
 
 
-.beerCardButton::after
+.beer-card-button::after
   --slice-0: inset(50% 50% 50% 50%)
   --slice-1: inset(80% -6px 0 0)
   --slice-2: inset(50% -6px 30% 0)
@@ -34,9 +34,9 @@
   clip-path: var(--slice-0)
 
 
-.beerCardButton:hover
+.beer-card-button:hover
     cursor: pointer
-.beerCardButton:hover::after
+.beer-card-button:hover::after
   animation: 1s glitch
   animation-timing-function: steps(2, end)
 

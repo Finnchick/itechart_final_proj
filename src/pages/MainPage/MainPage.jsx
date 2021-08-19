@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
+import { useHistory } from 'react-router-dom';
 
 import BeerCard from './Components/BeerCard/BeerCard';
 import Loading from '../../commonComponents/Loading/Loading';
-import './style.sass';
-import { useHistory } from 'react-router-dom';
 import Search from './Components/Search/Search';
+import './style.sass';
 
 function MainPage() {
   const [dataT, setData] = useState(null);
@@ -19,7 +19,7 @@ function MainPage() {
   const history = useHistory();
   if (dataT) {
     beerCardsCollection = dataT.map((item) => {
-      let {
+      const {
         id,
         name: cardHeader,
         tagline: information,
