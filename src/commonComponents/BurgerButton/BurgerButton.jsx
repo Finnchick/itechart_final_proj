@@ -1,10 +1,12 @@
 import React from 'react';
+
 import './style.sass';
+import clsx from 'clsx';
 
 function BurgerButton({ active, setActive }) {
   return (
     <div
-      className={active ? 'burgerButton change' : 'burgerButton'}
+      className={clsx('burger-button', active && ' change')}
       onClick={() => setActive(!active)}
     >
       <div className='bar1' />

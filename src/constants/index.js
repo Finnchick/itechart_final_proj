@@ -1,1 +1,1 @@
-export { HOME, FAVORITES, BEER_PAGE } from './routes';
+export * from './routes';

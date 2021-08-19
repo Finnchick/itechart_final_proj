@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import BeerCard from '../BeerCard/BeerCard';
-import './style.sass';
-import Loading from '../../../commonComponents/Loading/Loading';
 
-function AppWrapper() {
+import BeerCard from './Components/BeerCard/BeerCard';
+import Loading from '../../commonComponents/Loading/Loading';
+import './style.sass';
+import { useHistory } from 'react-router-dom';
+import Search from './Components/Search/Search';
+
+function MainPage() {
   const [dataT, setData] = useState(null);
 
   useEffect(async () => {
@@ -13,6 +16,7 @@ function AppWrapper() {
   }, []);
 
   let beerCardsCollection = null;
+  const history = useHistory();
   if (dataT) {
     beerCardsCollection = dataT.map((item) => {
       let {
@@ -21,27 +25,33 @@ function AppWrapper() {
         tagline: information,
         image_url: imageUrl,
       } = item;
+      const openBeerPage = () => {
+        history.push(`/beer/${id}`);
+      };
       return (
         <BeerCard
           key={id}
-          id={id}
           cardHeader={cardHeader}
           information={information}
           imageUrl={imageUrl}
+          openButtonCallback={openBeerPage}
         />
       );
     });
   }
 
   return (
-    <div className='appWrapper'>
-      {dataT ? (
-        <React.Fragment>{beerCardsCollection}</React.Fragment>
-      ) : (
-        <Loading />
-      )}
-    </div>
+    <React.Fragment>
+      <Search />
+      <div className='main-page'>
+        {dataT ? (
+          <React.Fragment>{beerCardsCollection}</React.Fragment>
+        ) : (
+          <Loading />
+        )}
+      </div>
+    </React.Fragment>
   );
 }
 
-export default AppWrapper;
+export default MainPage;

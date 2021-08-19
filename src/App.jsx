@@ -1,12 +1,12 @@
 import React from 'react';
-import Header from './commonComponents/Header/Header';
-import './sass/App.sass';
 import { Route, Switch } from 'react-router-dom';
-import { HOME, FAVORITES, BEER_PAGE } from './constants';
 
+import Header from './commonComponents/Header/Header';
 import BeerPage from './pages/BeerPage/BeerPage';
 import FavoritesPage from './pages/FavoritesPage/FavoritesPage';
-import MainPage from './pages/MainPage/mainPage/MainPage';
+import MainPage from './pages/MainPage/MainPage';
+import { HOME, FAVORITES, BEER_PAGE } from './constants';
+import './sass/App.sass';
 
 function App() {
   return (
@@ -14,7 +14,7 @@ function App() {
       <Header />
       <Switch>
         <Route path={BEER_PAGE}>
-          <BeerPage beerName={'Mocha'} />
+          <BeerPage beerName='Mocha' />
         </Route>
         <Route path={FAVORITES}>
           <FavoritesPage />

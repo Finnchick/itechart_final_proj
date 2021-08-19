@@ -1,16 +1,20 @@
 import React, { useState } from 'react';
-import FilterResults from '../FilterResults/FilterResults';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
-
-import './style.sass';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
+import FilterResults from '../FilterResults/FilterResults';
+import './style.sass';
+
 function Search() {
-  const [resultsActive, setResultsActive] = useState(false);
+  const [areResultsActive, setAreResultsActive] = useState(false);
 
   return (
     <div>
       <div className='search-box'>
-        <button className='btn-search' onClick={() => setResultsActive(true)}>
+        <button
+          className='btn-search'
+          onClick={() => setAreResultsActive(true)}
+        >
           <FontAwesomeIcon icon={faSearch} />
         </button>
         <input
@@ -19,7 +23,10 @@ function Search() {
           placeholder='Type to Search...'
         />
       </div>
-      <FilterResults isActive={resultsActive} setActive={setResultsActive} />
+      <FilterResults
+        isActive={areResultsActive}
+        setActive={setAreResultsActive}
+      />
     </div>
   );
 }

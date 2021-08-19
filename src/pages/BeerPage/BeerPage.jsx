@@ -1,18 +1,16 @@
 import React from 'react';
-import BeerCardButton from '../MainPage/BeerCardButton/BeerCardButton';
+
+import Button from '../../commonComponents/Button/Button';
 import './style.sass';
 
 function BeerPage({ beerName }) {
   return (
-    <div className='beerPageWrapper'>
-      <div className='beer-card'>
-        <div className='beerMinimumInfo'>
+    <div className='beer-page-wrapper'>
+      <div className='beer-page-card'>
+        <div className='beer-minimum-info'>
           <h1>{beerName}</h1>
           <h4>Post Modern Classic. Spiky. Tropical. Hoppy.</h4>
-          <BeerCardButton
-            buttonText='Add to favorites'
-            buttonClass={'beerCardButton'}
-          />
+          <Button buttonText='Add to favorites' className='beerCardButton' />
           <p>
             Our flagship beer that kick started the craft beer revolution. This
             is James and Martins original take on an American IPA, subverted
@@ -25,18 +23,18 @@ function BeerPage({ beerName }) {
           <img
             src='https://images.punkapi.com/v2/192.png'
             alt='Beer Image'
-            className='beerAvatar'
+            className='beer-avatar'
           />
         </div>
       </div>
-      <div className='beerDescription'>
+      <div className='beer-description'>
         <div className='properties'>
           <h2>Properties</h2>
           <p>ABV</p>
           <p>IBU</p>
           <p>EBS</p>
         </div>
-        <div className='foodPairing'>
+        <div className='food-pairing'>
           <h2>Food Pairing</h2>
           <p>Spicy carne asada with pico souce blalala</p>
           <p>Spicy carne asada with pico souce blalala</p>

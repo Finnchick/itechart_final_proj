@@ -1,15 +1,15 @@
-
+@import "src/sass/var"
 
 
 .beerCardButton, .beerCardButton::after
   width: 140px
   height: 50px
   font-size: 16px
-  background: linear-gradient(45deg, transparent 5%, #FF013C 5%)
+  background: $beercard-button-background
   border: 0
   color: #fff
   letter-spacing: 3px
-  box-shadow: 6px 0 0 #00E6F6
+  box-shadow: $beercard-button-shadow
   outline: transparent
   position: relative
 
@@ -29,7 +29,7 @@
   left: 0
   right: 0
   bottom: 0
-  background: linear-gradient(45deg, transparent 3%, #00E6F6 3%, #00E6F6 5%, #FF013C 5%)
+  background: $beercard-button-background-animation
   text-shadow: -3px -3px 0px #F8F005, 3px 3px 0px #00E6F6
   clip-path: var(--slice-0)
 
