@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Button from '../../commonComponents/Button/Button';
+import { Button } from '../../commonComponents';
 import './style.sass';
 
 function BeerPage({ beerName }) {

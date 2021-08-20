@@ -4,9 +4,10 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHome, faStar } from '@fortawesome/free-solid-svg-icons';
 import clsx from 'clsx';
 
+import {HOME, FAVORITES} from "../../constants";
 import './style.sass';
 
-function Menu({ active, setActive }) {
+export function Menu({ active, setActive }) {
   const setMenuActive = () => setActive(false);
   return (
     <nav
@@ -17,12 +18,12 @@ function Menu({ active, setActive }) {
       onClick={setMenuActive}
     >
       <ul className='menu-list'>
-        <Link to='/'>
+        <Link to={HOME}>
           <li className='menu-item'>
             <FontAwesomeIcon icon={faHome} /> Home
           </li>
         </Link>
-        <Link to='/favorites'>
+        <Link to={FAVORITES}>
           <li className='menu-item'>
             <FontAwesomeIcon icon={faStar} /> Favorietes
           </li>
@@ -31,5 +32,3 @@ function Menu({ active, setActive }) {
     </nav>
   );
 }
-
-export default Menu;

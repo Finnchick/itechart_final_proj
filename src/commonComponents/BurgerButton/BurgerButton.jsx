@@ -1,12 +1,13 @@
 import React from 'react';
-
-import './style.sass';
 import clsx from 'clsx';
 
-function BurgerButton({ active, setActive }) {
+import './style.sass';
+
+
+export function BurgerButton({ active, setActive }) {
   return (
     <div
-      className={clsx('burger-button', active && ' change')}
+      className={clsx('burger-button', active && 'change')}
       onClick={() => setActive(!active)}
     >
       <div className='bar1' />
@@ -15,5 +16,3 @@ function BurgerButton({ active, setActive }) {
     </div>
   );
 }
-
-export default BurgerButton;

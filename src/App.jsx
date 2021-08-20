@@ -1,7 +1,7 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 
-import Header from './commonComponents/Header/Header';
+import { Header } from './commonComponents';
 import BeerPage from './pages/BeerPage/BeerPage';
 import FavoritesPage from './pages/FavoritesPage/FavoritesPage';
 import MainPage from './pages/MainPage/MainPage';

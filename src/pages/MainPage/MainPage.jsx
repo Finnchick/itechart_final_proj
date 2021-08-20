@@ -2,12 +2,13 @@ import React, { useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 
 import BeerCard from './Components/BeerCard/BeerCard';
-import Loading from '../../commonComponents/Loading/Loading';
+import { Loading } from '../../commonComponents';
 import Search from './Components/Search/Search';
+import {BEER_PAGE} from "../../constants";
 import './style.sass';
 
 function MainPage() {
-  const [dataT, setData] = useState(null);
+  const [data, setData] = useState(null);
 
   useEffect(async () => {
     const response = await fetch('https://api.punkapi.com/v2/beers');
@@ -15,10 +16,10 @@ function MainPage() {
     setData(data);
   }, []);
 
-  let beerCardsCollection = null;
+  let beerCardsCollection;
   const history = useHistory();
-  if (dataT) {
-    beerCardsCollection = dataT.map((item) => {
+  if (data) {
+    beerCardsCollection = data.map((item) => {
       const {
         id,
         name: cardHeader,
@@ -26,8 +27,9 @@ function MainPage() {
         image_url: imageUrl,
       } = item;
       const openBeerPage = () => {
-        history.push(`/beer/${id}`);
+        history.push(`${BEER_PAGE}/${id}`);
       };
+
       return (
         <BeerCard
           key={id}
@@ -44,7 +46,7 @@ function MainPage() {
     <React.Fragment>
       <Search />
       <div className='main-page'>
-        {dataT ? (
+        {data ? (
           <React.Fragment>{beerCardsCollection}</React.Fragment>
         ) : (
           <Loading />

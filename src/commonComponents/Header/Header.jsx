@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 
-import BurgerButton from '../BurgerButton/BurgerButton';
-import Menu from '../Menu/Menu';
+import { BurgerButton } from '../';
+import { Menu } from '../';
 import './style.sass';
 
-function Header() {
+export function Header() {
   const [isMenuShown, setIsMenuShown] = useState(false);
 
   return (
@@ -16,5 +16,3 @@ function Header() {
     </div>
   );
 }
-
-export default Header;

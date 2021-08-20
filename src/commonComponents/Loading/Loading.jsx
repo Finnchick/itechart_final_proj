@@ -2,8 +2,6 @@ import React from 'react';
 
 import './style.sass';
 
-function Loading() {
+export function Loading() {
   return <div className='loading' />;
 }
-
-export default Loading;
