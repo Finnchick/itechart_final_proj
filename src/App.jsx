@@ -1,15 +1,28 @@
 import React from 'react';
-import Header from './commonComponents/Header/Header';
-import AppWrapper from './commonComponents/AppWrapper/AppWrapper';
-import Search from './commonComponents/Search/Search';
+import { Route, Switch } from 'react-router-dom';
+
+import { Header } from './commonComponents';
+import BeerPage from './pages/BeerPage/BeerPage';
+import FavoritesPage from './pages/FavoritesPage/FavoritesPage';
+import MainPage from './pages/MainPage/MainPage';
+import { HOME, FAVORITES, BEER_PAGE } from './constants';
 import './sass/App.sass';
 
 function App() {
   return (
-    <div className="app">
+    <div className='app'>
       <Header />
-      <Search />
-      <AppWrapper />
+      <Switch>
+        <Route path={BEER_PAGE}>
+          <BeerPage beerName='Mocha' />
+        </Route>
+        <Route path={FAVORITES}>
+          <FavoritesPage />
+        </Route>
+        <Route path={HOME}>
+          <MainPage />
+        </Route>
+      </Switch>
     </div>
   );
 }

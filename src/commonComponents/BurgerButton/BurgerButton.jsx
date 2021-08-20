@@ -1,18 +1,18 @@
-/* eslint-disable react/prop-types */
 import React from 'react';
-import './BurgerButton.sass';
+import clsx from 'clsx';
 
-function BurgerButton({ active, setActive }) {
+import './style.sass';
+
+
+export function BurgerButton({ active, setActive }) {
   return (
     <div
-      className={active ? 'BurgerButton change' : 'BurgerButton'}
+      className={clsx('burger-button', active && 'change')}
       onClick={() => setActive(!active)}
     >
-      <div className="bar1"></div>
-      <div className="bar2"></div>
-      <div className="bar3"></div>
+      <div className='bar1' />
+      <div className='bar2' />
+      <div className='bar3' />
     </div>
   );
 }
-
-export default BurgerButton;
