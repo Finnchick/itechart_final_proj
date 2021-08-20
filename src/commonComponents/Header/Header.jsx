@@ -1,17 +1,18 @@
 import React, { useState } from 'react';
-import './Header.sass';
-//import BurgerButton from "./commonComponents/BurgerButton.jsx"
+
 import BurgerButton from '../BurgerButton/BurgerButton';
 import Menu from '../Menu/Menu';
+import './style.sass';
 
 function Header() {
-  const [buttonActive, setButtonActive] = useState(false);
+  const [isMenuShown, setIsMenuShown] = useState(false);
+
   return (
-    <div className="Header">
-      <BurgerButton active={buttonActive} setActive={setButtonActive} />
-      <Menu active={buttonActive} setActive={setButtonActive}></Menu>
-      <h1 className="Logo"> Beer Catalagoue </h1>
-      <button></button>
+    <div className='header'>
+      <BurgerButton active={isMenuShown} setActive={setIsMenuShown} />
+      <Menu active={isMenuShown} setActive={setIsMenuShown} />
+      <h1 className='logo'> Beer Catalagoue </h1>
+      <button />
     </div>
   );
 }

@@ -1,0 +1,91 @@
+@import "src/sass/var"
+
+input[type=range]
+  height: 34px
+  -webkit-appearance: none
+  margin: 10px 0
+  width: 15%
+  background: inherit
+
+input[type=range]:focus
+  outline: none
+
+input[type=range]::-webkit-slider-runnable-track
+  width: 15%
+  height: 12px
+  cursor: pointer
+  animate: 0.2s
+  box-shadow: $slider-box-shadow-track
+  background: $slider-background-track
+  border-radius: 2px
+  border: $slider-border-track
+
+input[type=range]::-webkit-slider-thumb
+  box-shadow: $slider-box-shadow-thumb
+  border: $slider-border-thumb
+  height: 23px
+  width: 23px
+  border-radius: 23px
+  background: $slider-background-thumb
+  cursor: pointer
+  -webkit-appearance: none
+  margin-top: -7px
+
+input[type=range]:focus::-webkit-slider-runnable-track
+  background: $slider-background-track
+
+input[type=range]::-moz-range-track
+  width: 15%
+  height: 12px
+  cursor: pointer
+  animate: 0.2s
+  box-shadow: $slider-box-shadow-track
+  background: $slider-background-track
+  border-radius: 2px
+  border: $slider-border-track
+
+input[type=range]::-moz-range-thumb
+  box-shadow: $slider-box-shadow-thumb
+  border: $slider-border-thumb
+  height: 23px
+  width: 23px
+  border-radius: 23px
+  background: $slider-background-thumb
+  cursor: pointer
+
+input[type=range]::-ms-track
+  width: 15%
+  height: 12px
+  cursor: pointer
+  animate: 0.2s
+  background: transparent
+  border-color: transparent
+  color: transparent
+
+input[type=range]::-ms-fill-lower
+  background: $slider-background-track
+  border: $slider-border-track
+  border-radius: 4px
+  box-shadow: $slider-box-shadow-track
+
+input[type=range]::-ms-fill-upper
+  background: $slider-background-track
+  border: $slider-border-track
+  border-radius: 4px
+  box-shadow: $slider-box-shadow-track
+
+input[type=range]::-ms-thumb
+  margin-top: 1px
+  box-shadow: $slider-box-shadow-thumb
+  border: $slider-border-thumb
+  height: 23px
+  width: 23px
+  border-radius: 23px
+  background: $slider-background-thumb
+  cursor: pointer
+
+input[type=range]:focus::-ms-fill-lower
+  background: $slider-background-track
+
+input[type=range]:focus::-ms-fill-upper
+  background: $slider-background-track

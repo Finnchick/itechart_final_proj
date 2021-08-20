@@ -1,8 +1,9 @@
 import React from 'react';
-import './Loading.css';
+
+import './style.sass';
 
 function Loading() {
-  return <div className="loading"></div>;
+  return <div className='loading' />;
 }
 
 export default Loading;

@@ -1,21 +1,32 @@
+import React from 'react';
+import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHome, faStar } from '@fortawesome/free-solid-svg-icons';
-import React from 'react';
-import './Menu.sass';
-/* eslint-disable react/prop-types */
+import clsx from 'clsx';
+
+import './style.sass';
+
 function Menu({ active, setActive }) {
+  const setMenuActive = () => setActive(false);
   return (
     <nav
-      className={active ? 'menuActive' : 'menu'}
-      onClick={() => setActive(false)}
+      className={clsx({
+        menu: true,
+        'menu-active': active,
+      })}
+      onClick={setMenuActive}
     >
-      <ul className="menu__list">
-        <li className="menu__item">
-          <FontAwesomeIcon icon={faHome} /> Home
-        </li>
-        <li className="menu__item">
-          <FontAwesomeIcon icon={faStar} /> Favorietes
-        </li>
+      <ul className='menu-list'>
+        <Link to='/'>
+          <li className='menu-item'>
+            <FontAwesomeIcon icon={faHome} /> Home
+          </li>
+        </Link>
+        <Link to='/favorites'>
+          <li className='menu-item'>
+            <FontAwesomeIcon icon={faStar} /> Favorietes
+          </li>
+        </Link>
       </ul>
     </nav>
   );
