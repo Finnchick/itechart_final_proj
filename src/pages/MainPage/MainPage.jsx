@@ -1,27 +1,23 @@
-import React, { useEffect, useState } from 'react';
-import { useHistory } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
-import { fetchAllData } from '../../redux/beerDataSlice';
+import React, { useEffect } from "react";
+import { useHistory } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchAllData } from "../../redux/beerDataSlice";
 
-import BeerCard from './Components/BeerCard/BeerCard';
-import { Loading } from '../../commonComponents';
-import Search from './Components/Search/Search';
-import { BEER_PAGE } from '../../constants';
-import './style.sass';
-import store from '../../redux/store/store';
-/* eslint-disable */
+import BeerCard from "./Components/BeerCard/BeerCard";
+import { Loading } from "../../commonComponents";
+import Search from "./Components/Search/Search";
+import { BEER_PAGE } from "../../constants";
+import "./style.sass";
 
 function MainPage() {
-  const [data, setData] = useState(null);
   const dispatch = useDispatch();
   useEffect(
-    () => dispatch(fetchAllData('https://api.punkapi.com/v2/beers')),
+    () => dispatch(fetchAllData("https://api.punkapi.com/v2/beers")),
     []
   );
 
-  const state = store.getState();
   let beerCardsCollection = useSelector((state) => state.BeerReducer.beerData);
-  console.log(store, state, beerCardsCollection);
+
   const history = useHistory();
   if (beerCardsCollection) {
     beerCardsCollection = beerCardsCollection.map((item) => {
@@ -50,7 +46,7 @@ function MainPage() {
   return (
     <React.Fragment>
       <Search />
-      <div className='main-page'>
+      <div className="main-page">
         {beerCardsCollection ? (
           <React.Fragment>{beerCardsCollection}</React.Fragment>
         ) : (
