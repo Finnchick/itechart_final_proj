@@ -1,8 +1,9 @@
 import React, { useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchAllData } from "../../redux/beerDataSlice";
 
+import { fetchAllData } from "../../redux/thunks/thunks";
+import { selectAllBeers } from "../../redux/selectors/selectors";
 import BeerCard from "./Components/BeerCard/BeerCard";
 import { Loading } from "../../commonComponents";
 import Search from "./Components/Search/Search";
@@ -11,12 +12,10 @@ import "./style.sass";
 
 function MainPage() {
   const dispatch = useDispatch();
-  useEffect(
-    () => dispatch(fetchAllData("https://api.punkapi.com/v2/beers")),
-    []
-  );
 
-  let beerCardsCollection = useSelector((state) => state.BeerReducer.beerData);
+  useEffect(() => dispatch(fetchAllData()), []);
+
+  let beerCardsCollection = useSelector(selectAllBeers);
 
   const history = useHistory();
   if (beerCardsCollection) {

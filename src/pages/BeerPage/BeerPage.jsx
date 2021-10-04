@@ -7,26 +7,19 @@ import BeerSpecification from "./Components/BeerSpecification/BeerSpecification"
 import BeerBrewing from "./Components/BeerBrewing/BeerBrewing";
 import BeerIngredients from "./Components/BeerIngredients/BeerIngredients";
 import BeerMethod from "./Components/BeerMethod/BeerMethod";
-import "./style.sass";
-import { fetchAllData } from "../../redux/beerDataSlice";
+import { fetchAllData } from "../../redux/thunks/thunks";
 import { Loading } from "../../commonComponents";
+import { selectBeerById } from "../../redux/selectors/selectors";
+import "./style.sass";
 
 function BeerPage() {
   const location = useLocation();
   const dispatch = useDispatch();
-  let id = location.pathname.split("/"); //do this immutable
-  id = id[id.length - 1];
+  let id = location.pathname.split("/").slice(-1)[0]; //do this immutable
 
-  const selectBeerById = (state, id) => {
-    return state.BeerReducer.beerData.find((obj) => obj.id === +id);
-  };
+  useEffect(() => dispatch(fetchAllData()), []);
 
-  useEffect(
-    () => dispatch(fetchAllData("https://api.punkapi.com/v2/beers")),
-    []
-  );
-
-  const beer = useSelector((state) => selectBeerById(state, id));
+  const beer = useSelector(selectBeerById(id));
 
   return beer ? (
     <div className="beer-page-wrapper">
@@ -38,9 +31,9 @@ function BeerPage() {
       />
       <BeerSpecification
         foodPairing={beer.food_pairing}
-        IBUValue={beer.ibu}
-        ABVValue={beer.abv}
-        EBCValue={beer.ebc || 0}
+        ibuvalue={beer.ibu}
+        abvvalue={beer.abv}
+        ebcvalue={beer.ebc || 0}
       />
       <BeerBrewing brewerTips={beer.brewers_tips} />
       <div className="preparing">

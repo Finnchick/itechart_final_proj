@@ -4,13 +4,13 @@ import BeerProperties from "../BeerProperties/BeerProperties";
 import BeerFoodPairing from "../BeerFoodPairing/BeerFoodPairing";
 import "./style.sass";
 
-function BeerSpecification({ ABVValue, IBUValue, EBCValue, foodPairing }) {
+function BeerSpecification({ abvvalue, ibuvalue, ebcvalue, foodPairing }) {
   return (
     <div className="beer-specification">
       <BeerProperties
-        ABVValue={ABVValue}
-        EBCValue={EBCValue}
-        IBUValue={IBUValue}
+        ABVValue={abvvalue}
+        EBCValue={ebcvalue}
+        IBUValue={ibuvalue}
       />
       <BeerFoodPairing foodPairing={foodPairing} />
     </div>
