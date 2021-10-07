@@ -3,5 +3,6 @@ const selectBeerById = (id) => (state) => {
 };
 
 const selectAllBeers = (state) => state.beerReducer.beerData;
+const selectAllBeers1 = (state) => state.searchReducer.searchData;
 
-export { selectAllBeers, selectBeerById };
+export { selectAllBeers, selectBeerById, selectAllBeers1 };
