@@ -1,20 +1,23 @@
-import React from "react";
+import React from 'react';
 
-import { temperatureUnitCheck } from "../../../../utils";
-import "./style.sass";
+import { temperatureUnitCheck } from '../../../../utils';
+import './style.sass';
 
 function BeerMethod({ method }) {
   const MASH = method.mash_temp.map((item) => {
+    let { duration } = item;
+    let { value, unit } = item.temp;
+
     return (
       <p key={method.mash_temp.indexOf(item)}>
-        {`${item.duration || 0} minutes at ${item.temp.value} 
-        ${temperatureUnitCheck(item.temp.unit)}`}
+        {`${duration || 0} minutes at ${value} 
+        ${temperatureUnitCheck(unit)}`}
       </p>
     );
   });
 
   return (
-    <div className="method">
+    <div className='method'>
       <h2>Method</h2>
 
       <h3>Mash</h3>

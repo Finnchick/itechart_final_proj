@@ -1,19 +1,19 @@
-import React from "react";
+import React from 'react';
 
-import "./style.sass";
+import './style.sass';
 
-function BeerProperties({ ABVValue, IBUValue, EBCValue }) {
+function BeerProperties({ abv, ibu, ebc }) {
   return (
-    <div className="properties">
+    <div className='properties'>
       <h2>Properties</h2>
-      <div className="property-value">
-        <p>ABV</p> <p>{ABVValue}</p>
+      <div className='property-value'>
+        <p>ABV</p> <p>{abv}</p>
       </div>
-      <div className="property-value">
-        <p>IBU</p> <p>{IBUValue}</p>{" "}
+      <div className='property-value'>
+        <p>IBU</p> <p>{ibu}</p>
       </div>
-      <div className="property-value">
-        <p>EBC</p> <p>{EBCValue}</p>
+      <div className='property-value'>
+        <p>EBC</p> <p>{ebc}</p>
       </div>
     </div>
   );

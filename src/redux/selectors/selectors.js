@@ -1,7 +1,7 @@
 const selectBeerById = (id) => (state) => {
-  return state.BeerReducer.beerData.find((obj) => obj.id === +id);
+  return state.beerReducer.beerData.find((obj) => obj.id === +id);
 };
 
-const selectAllBeers = (state) => state.BeerReducer.beerData;
+const selectAllBeers = (state) => state.beerReducer.beerData;
 
 export { selectAllBeers, selectBeerById };

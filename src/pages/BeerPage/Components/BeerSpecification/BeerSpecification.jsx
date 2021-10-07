@@ -1,17 +1,13 @@
-import React from "react";
+import React from 'react';
 
-import BeerProperties from "../BeerProperties/BeerProperties";
-import BeerFoodPairing from "../BeerFoodPairing/BeerFoodPairing";
-import "./style.sass";
+import BeerProperties from '../BeerProperties/BeerProperties';
+import BeerFoodPairing from '../BeerFoodPairing/BeerFoodPairing';
+import './style.sass';
 
-function BeerSpecification({ abvvalue, ibuvalue, ebcvalue, foodPairing }) {
+function BeerSpecification({ abv, ibu, ebc, foodPairing }) {
   return (
-    <div className="beer-specification">
-      <BeerProperties
-        ABVValue={abvvalue}
-        EBCValue={ebcvalue}
-        IBUValue={ibuvalue}
-      />
+    <div className='beer-specification'>
+      <BeerProperties abv={abv} ebc={ebc} ibu={ibu} />
       <BeerFoodPairing foodPairing={foodPairing} />
     </div>
   );

@@ -1,16 +1,21 @@
-import React from "react";
+import React from 'react';
 
-import "./style.sass";
+import './style.sass';
 
 function BeerFoodPairing({ foodPairing }) {
+  const foodPairingList = foodPairing.map((string) => {
+    let key = foodPairing.indexOf(string);
+    return (
+      <div key={key} className='foodPairing'>
+        <p key={key}>{string}</p>
+      </div>
+    );
+  });
+
   return (
-    <div className="food-pairing">
+    <div className='food-pairing'>
       <h2>Food Pairing</h2>
-      {foodPairing.map((string) => (
-        <div key={foodPairing.indexOf(string)} className="test">
-          <p key={foodPairing.indexOf(string)}>{string}</p>
-        </div>
-      ))}
+      {foodPairingList}
     </div>
   );
 }
