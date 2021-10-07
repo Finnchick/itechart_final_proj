@@ -1,25 +1,25 @@
-import React, { useEffect, useState } from 'react';
-import { useHistory } from 'react-router-dom';
+import React, { useEffect } from "react";
+import { useHistory } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
 
-import BeerCard from './Components/BeerCard/BeerCard';
-import { Loading } from '../../commonComponents';
-import Search from './Components/Search/Search';
-import {BEER_PAGE} from "../../constants";
-import './style.sass';
+import { fetchAllData } from "../../redux/thunks/thunks";
+import { selectAllBeers } from "../../redux/selectors/selectors";
+import BeerCard from "./Components/BeerCard/BeerCard";
+import { Loading } from "../../commonComponents";
+import Search from "./Components/Search/Search";
+import { BEER_PAGE } from "../../constants";
+import "./style.sass";
 
 function MainPage() {
-  const [data, setData] = useState(null);
+  const dispatch = useDispatch();
 
-  useEffect(async () => {
-    const response = await fetch('https://api.punkapi.com/v2/beers');
-    const data = await response.json();
-    setData(data);
-  }, []);
+  useEffect(() => dispatch(fetchAllData()), []);
 
-  let beerCardsCollection;
+  let beerCardsCollection = useSelector(selectAllBeers);
+
   const history = useHistory();
-  if (data) {
-    beerCardsCollection = data.map((item) => {
+  if (beerCardsCollection) {
+    beerCardsCollection = beerCardsCollection.map((item) => {
       const {
         id,
         name: cardHeader,
@@ -45,8 +45,8 @@ function MainPage() {
   return (
     <React.Fragment>
       <Search />
-      <div className='main-page'>
-        {data ? (
+      <div className="main-page">
+        {beerCardsCollection ? (
           <React.Fragment>{beerCardsCollection}</React.Fragment>
         ) : (
           <Loading />
