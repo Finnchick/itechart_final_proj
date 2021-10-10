@@ -17,8 +17,11 @@ function MainPage() {
   const dispatch = useDispatch();
 
   const [test, setTest] = useState('');
+  const [abv, setAbv] = useState('');
   useEffect(() => dispatch(fetchAllData()), []);
+
   const firstUpdate = useRef(true);
+
   useEffect(() => {
     if (firstUpdate.current) {
       firstUpdate.current = false;
@@ -26,10 +29,12 @@ function MainPage() {
     }
     dispatch(fetchByNamez(test));
   }, [test]);
+
   let beerCardsCollection = useSelector(selectAllBeers);
   let test1 = useSelector(selectAllBeers1);
 
   const history = useHistory();
+
   if (beerCardsCollection) {
     beerCardsCollection = beerCardsCollection.map((item) => {
       const {
